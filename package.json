@@ -1,0 +1,16 @@
+{
+  "name": "schilling-menu-ical",
+  "version": "0.0.0",
+  "description": "iCal generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stefan Buchholtz",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.15.0",
+    "concat-stream": "^1.4.5",
+    "sprintf-js": "0.0.7"
+  }
+}
