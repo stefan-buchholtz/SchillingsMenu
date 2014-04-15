@@ -12,5 +12,14 @@
     "cheerio": "^0.15.0",
     "concat-stream": "^1.4.5",
     "sprintf-js": "0.0.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefan-buchholtz/SchillingsMenu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stefan-buchholtz/SchillingsMenu/issues"
+  },
+  "homepage": "https://github.com/stefan-buchholtz/SchillingsMenu"
 }
