@@ -5,12 +5,14 @@ var fetchMenu = require('./fetchMenu.js');
 var port = process.env.PORT || 8080;
 
 var server = http.createServer(function(request, response) {
+	console.log('request: ' + request.url);
 	var urlComponents = url.parse(request.url);
-	if ( urlComponents.pathname === '/schillings.ics' ) {
+	if ( urlComponents.pathname.toLowerCase() === '/schillings.ics' ) {
 		fetchMenu(function(err, icalData) {
 			if ( err ) {
 			    response.statusCode = 500;
 			    response.end(err.toString());
+			    console.log('error: ' + err.toString());
 			    return;
 			}
 			var content = new Buffer(icalData);
