@@ -2,9 +2,10 @@ var http = require('http');
 var url = require('url');
 var fetchMenu = require('./fetchMenu.js');
 
+var port = process.env.PORT || 8080;
+
 var server = http.createServer(function(request, response) {
 	var urlComponents = url.parse(request.url);
-	console.log(request.url);
 	if ( urlComponents.pathname === '/schillings.ics' ) {
 		fetchMenu(function(err, icalData) {
 			response.writeHead(200, {
@@ -15,7 +16,9 @@ var server = http.createServer(function(request, response) {
 		});
 	} else {
 		response.statusCode = 404;
-		response.end();
+		response.end(urlComponents.pathname + ' not found');
 	}
 });
-server.listen(8080);
+
+server.listen(port);
+console.log('server launched on port ' + port);
