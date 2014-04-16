@@ -12,7 +12,7 @@ module.exports = function(prodId, events) {
 	ical = ical + events.map(function(event) {
 		var s = 'BEGIN:VEVENT\n';
 		if ( event.uid ) {
-			s = s + getICalString('UID:', event.uid) + '\n';
+			s = s + getICalString('UID', event.uid) + '\n';
 		}
 		if ( event.summary ) {
 			s = s + getICalString('SUMMARY', event.summary) + '\n';
