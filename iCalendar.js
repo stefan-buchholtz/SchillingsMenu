@@ -20,6 +20,7 @@ module.exports = function(prodId, events) {
 		return s;
 	}).join('');
 	ical = ical + 'END:VCALENDAR\n';
+	ical = ical.replace('\n', '\r\n');
 	return ical;
 }
 
