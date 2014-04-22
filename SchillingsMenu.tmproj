@@ -10,19 +10,19 @@
 			<key>filename</key>
 			<string>index.js</string>
 			<key>lastUsed</key>
-			<date>2014-04-15T17:53:05Z</date>
+			<date>2014-04-16T05:22:59Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>scraper.js</string>
 			<key>lastUsed</key>
-			<date>2014-04-15T17:53:07Z</date>
+			<date>2014-04-16T05:23:02Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>package.json</string>
 			<key>lastUsed</key>
-			<date>2014-04-15T17:53:07Z</date>
+			<date>2014-04-16T05:23:02Z</date>
 			<key>selected</key>
 			<true/>
 		</dict>
@@ -38,7 +38,7 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>1</integer>
+				<integer>5</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -50,30 +50,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>28</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>1</integer>
+				<integer>25</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>11</integer>
-				<key>line</key>
-				<integer>1</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>30</integer>
-				<key>line</key>
-				<integer>1</integer>
-			</dict>
 		</dict>
 		<key>scraper.js</key>
 		<dict>
@@ -99,6 +83,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{249, 103}, {905, 955}}</string>
+	<string>{{249, 66}, {905, 812}}</string>
 </dict>
 </plist>
