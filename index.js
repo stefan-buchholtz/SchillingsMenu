@@ -18,7 +18,7 @@ var server = http.createServer(function(request, response) {
 			var content = new Buffer(icalData);
 			response.writeHead(200, {
 				'Content-Length': content.length,
-				'Content-Type': 'text/calendar'
+				'Content-Type': 'text/calendar; charset=utf8'
 			});
 			response.end(content);
 		});
