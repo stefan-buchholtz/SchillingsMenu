@@ -23,6 +23,12 @@ module.exports = function(prodId, events) {
 		s = s + 'DTSTAMP:' + getDateString(event.startDate) + '\n';
 		s = s + 'DTSTART:' + getDateString(event.startDate) + '\n';
 		s = s + 'DTEND:' + getDateString(event.endDate) + '\n';
+		if (event.contact) {
+			s = s + getICalString('CONTACT', event.contact) + '\n';
+		}
+		if (event.url) {
+			s = s + getICalString('URL', event.url) + '\n';
+		}
 		s = s + 'END:VEVENT\n';
 		return s;
 	}).join('');
