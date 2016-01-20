@@ -22,8 +22,6 @@ module.exports = function(callback) {
 					endDate: endDate,
 					summary: menu.dishes.join(' / '),
 					url: URL,
-					organizerName: ORGANIZER_NAME,
-					organizerUri: ORGANIZER_URI,
 					transparent: true
 				}
 			});
