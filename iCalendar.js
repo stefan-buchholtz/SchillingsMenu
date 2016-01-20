@@ -12,24 +12,34 @@ module.exports = function(prodId, events) {
 	ical = ical + events.map(function(event) {
 		var s = 'BEGIN:VEVENT\n';
 		if ( event.uid ) {
-			s = s + getICalString('UID', event.uid) + '\n';
+			s += getICalString('UID', event.uid) + '\n';
 		}
 		if ( event.summary ) {
-			s = s + getICalString('SUMMARY', event.summary) + '\n';
+			s += getICalString('SUMMARY', event.summary) + '\n';
 		}
 		if ( event.description ) {
-			s = s + getICalString('DESCRIPTION', event.description) + '\n';
+			s += getICalString('DESCRIPTION', event.description) + '\n';
 		}
-		s = s + 'DTSTAMP:' + getDateString(event.startDate) + '\n';
-		s = s + 'DTSTART:' + getDateString(event.startDate) + '\n';
-		s = s + 'DTEND:' + getDateString(event.endDate) + '\n';
+		s += 'DTSTAMP:' + getDateString(event.startDate) + '\n';
+		s += 'DTSTART:' + getDateString(event.startDate) + '\n';
+		s += 'DTEND:' + getDateString(event.endDate) + '\n';
 		if (event.contact) {
-			s = s + getICalString('CONTACT', event.contact) + '\n';
+			s += getICalString('CONTACT', event.contact) + '\n';
+		}
+		if (event.organizerUri) {
+			var organizerParam = 'ORGANIZER';
+			if (event.organizerName) {
+				organizerParam += ';CN=' + event.organizerName;
+			}
+			s += getICalString(organizerParam, event.organizerUri) + '\n';
 		}
 		if (event.url) {
-			s = s + getICalString('URL', event.url) + '\n';
+			s += getICalString('URL', event.url) + '\n';
 		}
-		s = s + 'END:VEVENT\n';
+		if (event.transparent) {
+			s += getICalString('TRANSP', 'TRANSPARENT') + '\n';
+		}
+		s += 'END:VEVENT\n';
 		return s;
 	}).join('');
 	ical = ical + 'END:VCALENDAR\n';
@@ -47,14 +57,14 @@ function getDateString(date) {
 }
 
 function getICalString(key, value) {
-    value = value.split('').map(function(c) {
-	return ESCAPES[c] || c;
-    }).join('');
+	value = value.split('').map(function(c) {
+		return ESCAPES[c] || c;
+	}).join('');
 
-    var line = key + ':' + value;
-    var lines = [];
-    for (var i = 0; i < line.length; i += 75) {
-	lines.push(line.substr(i, 75));
-    }
-    return lines.join('\n ');
+	var line = key + ':' + value;
+	var lines = [];
+	for (var i = 0; i < line.length; i += 75) {
+		lines.push(line.substr(i, 75));
+	}
+	return lines.join('\n ');
 }

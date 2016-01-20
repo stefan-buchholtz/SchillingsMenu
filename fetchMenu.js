@@ -4,6 +4,8 @@ var scraper = require('./scraper.js');
 var iCalendar = require('./iCalendar.js');
 
 var URL = 'http://metzgerei-schillings.de/wochenkarte.htm';
+var ORGANIZER_NAME = 'Metzgerei Schillings';
+var ORGANIZER_URI = 'tel:+49-2182-5690';
 var CONTACT = 'Metzgerei Schillings\, 02182-5690';
 
 module.exports = function(callback) {
@@ -20,7 +22,9 @@ module.exports = function(callback) {
 					endDate: endDate,
 					summary: menu.dishes.join(' / '),
 					url: URL,
-					contact: CONTACT
+					organizerName: ORGANIZER_NAME,
+					organizerUri: ORGANIZER_URI,
+					transparent: true
 				}
 			});
 			var ical = iCalendar('//Stefan Buchholtz//Metzgerei Schillings Wochenkarte//DE', events);
